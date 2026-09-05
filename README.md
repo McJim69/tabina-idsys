@@ -128,5 +128,5 @@ It features an integrated citizen portal and a robust administration module.
 ## 📄 License
 Maintained by **LGU Tabina**.  
 For inquiries, contact:
- - The Municipal IT Office
+ - admin@mcjim-server.com
  - McJim Cyberworks https://mcjim-server.com
