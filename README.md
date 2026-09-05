@@ -136,7 +136,7 @@ For inquiries, contact the developer:
 
 #### Quick Start
 
-# ⚡ Quick Start – LGU Tabina CCDP
+## ⚡ Quick Start – LGU Tabina CCDP
 This guide helps you set up the **LGU Tabina Citizen-Centric Digital Platform (CCDP)** quickly.
 
 
