@@ -3,10 +3,12 @@
 Welcome to the official documentation for the **LGU Tabina CCDP**.  
 This platform streamlines, automates, and secures municipal services for residents of Tabina, Zamboanga del Sur.
 
+---
 
 ## ✨ Overview
 The CCDP integrates a citizen portal with an administration module to manage applications, permits, and certificates.
 
+---
 
 ## 🚀 Key Features
 - **[Global AJAX CRUD Engine](ca://s?q=Explain_Global_AJAX_CRUD_Engine)** – instant record operations across all tables.  
@@ -15,6 +17,7 @@ The CCDP integrates a citizen portal with an administration module to manage app
 - **[Self-Healing QR Codes](ca://s?q=Explain_Self_Healing_QR_Codes)** – generated on-the-fly for official printouts.  
 - **[Secure Password Hashing](ca://s?q=Explain_Password_Hashing_in_PHP)** – modern PHP hashing algorithms.  
 
+---
 
 ## 📦 Deployment Guide
 ### Server Dependencies
@@ -27,18 +30,21 @@ The CCDP integrates a citizen portal with an administration module to manage app
 ### Folder Permissions
 - Ensure **read/write access** for QR code directories and user upload folders.  
 
+---
 
 ## 🏛 System Architecture
 - **Database Model** – modular tables per municipal service.  
 - **Date Fields Consolidation** – unified SQL DATE columns.  
 - **Global CRUD Engine** – centralized backend scripts with secure AJAX endpoints.  
 
+---
 
 ## 👩‍💼 Admin User Guide
 - **Review Applications** – access citizen submissions via admin grids.  
 - **Approve/Deny Requests** – restricted to Admin/Executive accounts.  
 - **Print Cards & Certificates** – ISO ID‑1 cards and A4 certificates with seals & QR codes.  
 
+---
 
 ## 👨‍👩‍👧 Citizen Portal Guide
 - **Account Setup** – citizens upload profile photo for ID cards.  
@@ -46,12 +52,14 @@ The CCDP integrates a citizen portal with an administration module to manage app
 - **Real-Time Tracking** – instant notifications on status updates.  
 - **Single-Application Enforcement** – one ID card per citizen.  
 
+---
 
 ## 💬 Communication Features
 - **Private Messenger** – 1‑on‑1 chat with real-time delivery.  
 - **Group Chat Rooms** – multiple rooms for announcements & coordination.  
 - **Message Board** – official bulletin with moderation & read tracking.  
 
+---
 
 ## 📊 System Audit Logs
 - Real-time polling every few seconds.  
@@ -60,6 +68,7 @@ The CCDP integrates a citizen portal with an administration module to manage app
 - 15-day activity chart with trend visualization.  
 - Advanced filtering, sorting, and CSV export.  
 
+---
 
 ## 🛠 Developer Reference
 - **Password Hashing** – secure PHP algorithms.  
@@ -69,7 +78,38 @@ The CCDP integrates a citizen portal with an administration module to manage app
 - **Print Layouts** – CSS `@media print` rules.  
 - **Security Guard** – strict authentication for AJAX routing.  
 
+---
 
 ## 📄 License
 Maintained by **LGU Tabina**.  
-For inquiries, contact the municipal IT office.
+For inquiries, contact:
+ - Municipal IT Office
+ - McJim Cyberworsk https://mcjim-server.com
+
+---
+
+## 📜 Code of Conduct
+
+To maintain a welcoming and collaborative environment, all contributors are expected to follow these guidelines:
+
+### Respect & Inclusivity
+- Treat all members with respect and professionalism.  
+- Encourage diverse perspectives and constructive feedback.  
+- Avoid discriminatory, offensive, or harassing behavior.  
+
+### Collaboration
+- Communicate clearly in issues and pull requests.  
+- Provide context and reasoning for proposed changes.  
+- Be open to revisions and discussions.  
+
+### Responsibility
+- Ensure contributions follow secure coding practices.  
+- Test changes before submitting pull requests.  
+- Keep documentation updated when introducing new features.  
+
+### Enforcement
+Violations of this Code of Conduct may result in warnings or removal of contributions.  
+Admins and maintainers reserve the right to enforce these rules to protect the community.
+
+---
+
