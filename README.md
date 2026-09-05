@@ -129,4 +129,6 @@ It features an integrated citizen portal and a robust administration module.
 Maintained by **LGU Tabina**.  
 For inquiries, contact:
  - admin@mcjim-server.com
- - McJim Cyberworks https://mcjim-server.com
+ - https://mcjim-server.com
+
+---
