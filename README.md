@@ -125,17 +125,7 @@ It features an integrated citizen portal and a robust administration module.
 
 ---
 
-## 📄 License
-Maintained by **LGU Tabina**  
-For inquiries, contact the developer:
- - admin@mcjim-server.com
- - https://mcjim-server.com
-
----
-
-#### Quick Start
-
-# ⚡ Quick Start – LGU Tabina CCDP
+## ⚡ Quick Start – LGU Tabina CCDP
 This guide helps you set up the **LGU Tabina Citizen-Centric Digital Platform (CCDP)** quickly.
 
 ---
@@ -175,5 +165,13 @@ Test citizen registration and verify QR code generation
 
 ### ✅ Done!
 You now have the CCDP running locally.
+
+---
+
+## 📄 License
+Maintained by **LGU Tabina**  
+For inquiries, contact the developer:
+ - admin@mcjim-server.com
+ - https://mcjim-server.com
 
 ---
