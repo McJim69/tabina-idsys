@@ -171,6 +171,5 @@ Test citizen registration and verify QR code generation
 
 ## ✅ Done!
 You now have the CCDP running locally.
-For advanced deployment, see the main README.
 
 ---
