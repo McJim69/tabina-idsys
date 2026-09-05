@@ -126,8 +126,8 @@ It features an integrated citizen portal and a robust administration module.
 ---
 
 ## 📄 License
-Maintained by **LGU Tabina**.  
-For inquiries, contact:
+Maintained by **LGU Tabina**  
+For inquiries, contact the developer:
  - admin@mcjim-server.com
  - https://mcjim-server.com
 
