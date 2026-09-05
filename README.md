@@ -1,115 +1,132 @@
-# LGU Tabina Citizen-Centric Digital Platform (CCDP)
-
-Welcome to the official documentation for the **LGU Tabina CCDP**.  
-This platform streamlines, automates, and secures municipal services for residents of Tabina, Zamboanga del Sur.
+# LGU Tabina Citizen-Centric Digital Platform (CCDP)  
+![PHP](https://img.shields.io/badge/PHP-7.4%20--%208.2-blue?logo=php)  
+![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange?logo=mysql)  
+![MariaDB](https://img.shields.io/badge/MariaDB-10.4%2B-lightblue?logo=mariadb)  
+![Apache](https://img.shields.io/badge/Apache-2.4%2B-red?logo=apache)  
+![License](https://img.shields.io/badge/License-LGU%20Tabina-green)
 
 ---
 
 ## ✨ Overview
-The CCDP integrates a citizen portal with an administration module to manage applications, permits, and certificates.
+The **LGU Tabina CCDP** streamlines, automates, and secures municipal services for residents of Tabina, Zamboanga del Sur.  
+It features an integrated citizen portal and a robust administration module.
 
 ---
 
 ## 🚀 Key Features
-- **[Global AJAX CRUD Engine](ca://s?q=Explain_Global_AJAX_CRUD_Engine)** – instant record operations across all tables.  
-- **[System Audit Logs](ca://s?q=Explain_System_Audit_Logs)** – real-time KPIs, filters, sorting, CSV exports, activity charts.  
-- **[Role-Based Approval](ca://s?q=Explain_Role_Based_Approval)** – restricted to Administrator & Executive accounts.  
-- **[Self-Healing QR Codes](ca://s?q=Explain_Self_Healing_QR_Codes)** – generated on-the-fly for official printouts.  
-- **[Secure Password Hashing](ca://s?q=Explain_Password_Hashing_in_PHP)** – modern PHP hashing algorithms.  
+- **[Global AJAX CRUD Engine](ca://s?q=Explain_Global_AJAX_CRUD_Engine)**  
+- **[System Audit Logs](ca://s?q=Explain_System_Audit_Logs)**  
+- **[Role-Based Approval](ca://s?q=Explain_Role_Based_Approval)**  
+- **[Self-Healing QR Codes](ca://s?q=Explain_Self_Healing_QR_Codes)**  
+- **[Secure Password Hashing](ca://s?q=Explain_Password_Hashing_in_PHP)**  
 
 ---
 
 ## 📦 Deployment Guide
-### Server Dependencies
 - Standard PHP/MySQL environment (PHP 7.4–8.2, MySQL/MariaDB).  
-- Compatible with common web servers (Apache/IIS).  
-
-### Database Schema Setup
-- Apply **unique constraints** on ID card tables (Senior Citizens, PWD, Solo Parents).  
-
-### Folder Permissions
+- Apply **unique constraints** on ID card tables.  
 - Ensure **read/write access** for QR code directories and user upload folders.  
 
 ---
 
 ## 🏛 System Architecture
-- **Database Model** – modular tables per municipal service.  
-- **Date Fields Consolidation** – unified SQL DATE columns.  
-- **Global CRUD Engine** – centralized backend scripts with secure AJAX endpoints.  
+- **[Database Model](ca://s?q=Explain_Database_Model_in_CCDP)**  
+- **[Date Fields Consolidation](ca://s?q=Explain_Date_Fields_Consolidation)**  
+- **[Global CRUD Engine](ca://s?q=Explain_Global_CRUD_Engine)**  
 
 ---
 
 ## 👩‍💼 Admin User Guide
-- **Review Applications** – access citizen submissions via admin grids.  
-- **Approve/Deny Requests** – restricted to Admin/Executive accounts.  
-- **Print Cards & Certificates** – ISO ID‑1 cards and A4 certificates with seals & QR codes.  
+- Review applications via admin grids.  
+- Approve/Deny requests (Admin/Executive only).  
+- Print ID cards and certificates with QR verification.  
 
 ---
 
 ## 👨‍👩‍👧 Citizen Portal Guide
-- **Account Setup** – citizens upload profile photo for ID cards.  
-- **Smart Form Auto-Filling** – pre-populated demographic data.  
-- **Real-Time Tracking** – instant notifications on status updates.  
-- **Single-Application Enforcement** – one ID card per citizen.  
+- Account setup with profile photo.  
+- Smart form auto‑filling.  
+- Real‑time tracking with notifications.  
+- Single‑application enforcement for ID cards.  
 
 ---
 
 ## 💬 Communication Features
-- **Private Messenger** – 1‑on‑1 chat with real-time delivery.  
-- **Group Chat Rooms** – multiple rooms for announcements & coordination.  
-- **Message Board** – official bulletin with moderation & read tracking.  
+- Private Messenger (1‑on‑1).  
+- Group Chat Rooms.  
+- Message Board for announcements.  
 
 ---
 
 ## 📊 System Audit Logs
-- Real-time polling every few seconds.  
-- Action verb & table detection with badges.  
-- KPI indicators (Created Today, Updated Today, Top Operator, etc.).  
-- 15-day activity chart with trend visualization.  
-- Advanced filtering, sorting, and CSV export.  
+- Real‑time polling.  
+- Action verb & table detection.  
+- KPI indicators.  
+- 15‑day activity chart.  
+- Filtering, sorting, CSV export.  
 
 ---
 
 ## 🛠 Developer Reference
-- **Password Hashing** – secure PHP algorithms.  
-- **QR Code Engine** – auto-regeneration fallback.  
-- **SQL Mode Compliance** – NULL-safe date handling.  
-- **FFmpeg Integration** – video thumbnails for uploads.  
-- **Print Layouts** – CSS `@media print` rules.  
-- **Security Guard** – strict authentication for AJAX routing.  
+- Password hashing.  
+- QR code engine fallback.  
+- SQL strict mode compliance.  
+- FFmpeg integration.  
+- Print layouts.  
+- Security guard for AJAX routing.  
+
+---
+
+## 🤝 Contribution Guidelines
+- **[Fork the repository](ca://s?q=How_to_fork_a_repository)**  
+- **[Create a feature branch](ca://s?q=How_to_create_a_feature_branch)**  
+- **[Commit changes](ca://s?q=Best_practices_for_git_commits)**  
+- **[Push to your fork](ca://s?q=How_to_push_to_git_fork)**  
+- **[Open a Pull Request](ca://s?q=How_to_open_a_pull_request)**  
+
+---
+
+## 📜 Code of Conduct
+- Respect & inclusivity.  
+- Clear collaboration.  
+- Responsibility in coding & documentation.  
+- Enforcement by admins/maintainers.  
+
+---
+
+## 📝 Release Notes
+### v1.0.0 – Initial Release  
+- Core deployment, CRUD engine, secure hashing, QR codes.  
+
+### v1.1.0 – Feature Enhancements  
+- Audit Logs Dashboard, Smart Form Auto‑Filling, role‑based approval.  
+
+### v1.2.0 – Communication Suite  
+- Private Messenger, Group Chat Rooms, Message Board.  
+
+### v1.3.0 – Developer Improvements  
+- SQL DATE consolidation, FFmpeg integration, strict SQL compliance.  
+
+---
+
+## 🔒 Security Policy
+- Report vulnerabilities via the **[issue tracker](ca://s?q=How_to_use_issue_tracker)**.  
+- Do not disclose publicly until patched.  
+- Follow responsible disclosure practices.  
+- Security fixes prioritized in upcoming releases.  
+
+---
+
+## 📆 Changelog
+- **Added** audit logs dashboard.  
+- **Improved** QR code generation fallback.  
+- **Fixed** strict SQL mode date handling.  
+- **Enhanced** communication suite with group chat.  
 
 ---
 
 ## 📄 License
 Maintained by **LGU Tabina**.  
 For inquiries, contact:
- - Municipal IT Office
- - McJim Cyberworsk https://mcjim-server.com
-
----
-
-## 📜 Code of Conduct
-
-To maintain a welcoming and collaborative environment, all contributors are expected to follow these guidelines:
-
-### Respect & Inclusivity
-- Treat all members with respect and professionalism.  
-- Encourage diverse perspectives and constructive feedback.  
-- Avoid discriminatory, offensive, or harassing behavior.  
-
-### Collaboration
-- Communicate clearly in issues and pull requests.  
-- Provide context and reasoning for proposed changes.  
-- Be open to revisions and discussions.  
-
-### Responsibility
-- Ensure contributions follow secure coding practices.  
-- Test changes before submitting pull requests.  
-- Keep documentation updated when introducing new features.  
-
-### Enforcement
-Violations of this Code of Conduct may result in warnings or removal of contributions.  
-Admins and maintainers reserve the right to enforce these rules to protect the community.
-
----
-
+ - The Municipal IT Office
+ - McJim Cyberworks https://mcjim-server.com
