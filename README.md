@@ -55,7 +55,7 @@ The CCDP integrates a citizen portal with an administration module to manage app
 ---
 
 ## 💬 Communication Features
-- **Private Messenger** – 1on1 chat with real-time delivery.  
+- **Private Messenger** – 1‑on‑1 chat with real-time delivery.  
 - **Group Chat Rooms** – multiple rooms for announcements & coordination.  
 - **Message Board** – official bulletin with moderation & read tracking.  
 
