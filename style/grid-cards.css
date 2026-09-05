@@ -1,0 +1,61 @@
+.bmargin{
+	margin-top:5px;
+	text-align:left;
+}
+
+/* 1. Main Card Container */
+.grid .card {
+	position: relative;
+	transition: transform 0.2s, box-shadow 0.2s;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #ffffff;
+	border: 1px solid #e9ecef;
+}
+
+.grid .card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* 2. Image Container */
+.grid .card > div:first-child,
+[class*="-img-container"],
+[class*="_card-img-container"] {
+	position: relative;
+	overflow: hidden;
+	height: 220px;
+	background: #f8f9fa;
+}
+
+.grid .card > div:first-child img,
+[class*="-img-container"] img,
+[class*="_card-img-container"] img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* 3. Hover Actions Overlay */
+[class*="-hover-actions"],
+[class*="_hover-actions"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.75);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	padding: 15px;
+	z-index: 5;
+}
+
+.grid .card:hover [class*="-hover-actions"],
+.grid .card:hover [class*="_hover-actions"] {
+	opacity: 1;
+}

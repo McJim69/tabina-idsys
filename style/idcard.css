@@ -1,0 +1,206 @@
+@font-face {
+   font-family: MyriadPro;
+   src: url(style/fonts/MyriadPro-Regular.woff);
+   src: url(style/fonts/MyriadPro-Regular.eot);
+   src: url(style/fonts/MyriadPro-Regular.tff);
+   src: url(style/fonts/MyriadPro-Regular.svg);
+   src: url(style/fonts/MyriadPro-Regular.otf);
+}
+
+* {
+   font-family: MyriadPro, sans-serif;
+}	
+
+.header { display:none; }
+
+.print-full-width {
+	container-type: inline-size;
+	width: 100%;
+}
+
+.id-card-container {
+	width: 100%;
+	height: 286px;
+	height: calc(286px * (min(100cqw, 930px) / 930));
+	margin-bottom: 25px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.id-card-wrapper {
+	position: absolute;
+	left: 50%;
+	margin-left: -465px;
+	width: 930px;
+	height: 286px;
+	transform-origin: top center;
+	transform: scale(calc(min(100cqw, 930px) / 930));
+	page-break-inside: avoid;
+	margin-bottom: 0 !important;
+}
+
+.id-card-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 930px;
+	height: 286px;
+	z-index: 1;
+}
+
+.id-title-badge {
+	color: #FFF;
+	font-size: 17px;
+	border-radius: 3px;
+	text-align: center;
+	width: 120px;
+	position: absolute;
+	top: 43px;
+	right: 479px;
+	z-index: 20;
+	font-weight: bold;
+}
+
+.id-number-badge {
+	color: #FFF;
+	font-size: 17px;
+	border-radius: 3px;
+	text-align: center;
+	width: 120px;
+	position: absolute;
+	top: 67px;
+	right: 477px;
+	z-index: 20;
+	font-weight: bold;
+}
+
+.id-photo-container {
+	border-radius: 4px;
+	position: absolute;
+	left: 12px;
+	top: 93px;
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+	z-index: 10;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.id-photo-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.id-signature-container {
+	position: absolute;
+	left: 17px;
+	top: 246px;
+	height: 35px;
+	width: 120px;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.id-details-front {
+	font-size: 14px;
+	text-align: left;
+	position: absolute;
+	left: 160px;
+	top: 85px;
+	width: 300px;
+	height: 143px;
+	padding: 5px;
+	z-index: 10;
+	color: #000;
+}
+
+.id-details-back {
+	font-size: 12px;
+	text-align: left;
+	position: absolute;
+	top: 55px;
+	left: 525px;
+	z-index: 10;
+	color: #000;
+	width: 250px;
+}
+
+.id-terms-statement {
+	font-size: 10px;
+	text-align: justify;
+	position: absolute;
+	top: 140px;
+	left: 525px;
+	padding-right: 5px;
+	z-index: 10;
+	color: #000;
+	width: 370px;
+	line-height: 1.1;
+}
+
+.id-qrcode-container {
+	position: absolute;
+	top: 50px;
+	right: 35px;
+	z-index: 10;
+	background: #fff;
+	padding: 2px;
+	border: 1px solid #ccc;
+}
+.idmarg{margin-top:133px;}
+@media (max-width: 767.98px){
+	.ipad {
+		padding-left: 15px;
+	}
+}
+
+@media print {
+	#menu_, #cssmenu, .menu_div { display: none !important; }
+	.t_controls { display: none !important; }
+	.mother { display: none !important; }
+	.grid { display: none !important; }
+	.list { display: none !important; }
+	.idmarg { display: none !important; }
+	.spacer { display: none !important; }
+	.hid { display: none !important; margin: 0 !important; }
+	.container-fluid { padding: 0 !important; margin: 0 !important; }
+	.row { display: block !important; margin: 0 !important; }
+	.print-full-width {
+		width: 100% !important;
+		max-width: 100% !important;
+		flex: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: block !important;
+	}
+	.print-divider {
+		page-break-after: always !important;
+		height: 0px !important;
+		border: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	
+	/* Direct print layout safety overrides for ID cards */
+	.id-card-container {
+		height: 286px !important;
+		width: 930px !important;
+		margin-bottom: 20px !important;
+		display: block !important;
+		position: relative !important;
+	}
+	.id-card-wrapper {
+		position: relative !important;
+		left: auto !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		transform: none !important;
+		box-shadow: none !important;
+		margin-bottom: 0 !important;
+	}
+}

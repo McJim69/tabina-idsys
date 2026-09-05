@@ -1,0 +1,45 @@
+#slidecontainer{
+	position:relative;
+}
+
+#slidecontainer div{
+	display:table-cell;
+	width:1700px;
+	vertical-align:top;
+}
+
+#slidecontainer div .main{
+	width:100%;
+}
+.t-slides{
+	width:550px;
+	background:transparent;
+	z-index:1000;
+	position:top;
+	margin:0 auto;
+	top:10px;
+}
+
+.tr-slides{
+	background:transparent;
+	border:0;
+}
+
+.td-slides{
+	border:0;
+	padding:0;
+	position:relative;
+	right:0px;
+	left:0px;
+}
+
+.div-slides{
+	overflow:hidden;
+	width:500px;
+	position:relative;
+	border:2px solid #960000; 
+	-webkit-border-radius: 10px 10px 10px;
+	 -khtml-border-radius: 10px 10px 10px;
+	   -moz-border-radius: 10px 10px 10px;
+		    border-radius: 10px 10px 10px;
+}

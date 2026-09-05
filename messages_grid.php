@@ -1,0 +1,247 @@
+<?php
+	require("connect.php");
+	include("header.php");
+	include("menu.php"); 
+?>
+
+<script> setActive("messages"); </script>
+<script> setActive("msgin"); </script>
+<script> setActive("msgingrid"); </script>
+
+<link href="style/grid-cards.css?v=2.0.8" rel="stylesheet" type="text/css"/>
+
+<form method="post" enctype="multipart/form-data">
+
+<div class="t_controls" style="background:url('images/bg.jpg');border:0px;padding-top:15px;padding-bottom:15px">
+	<div class="container">
+		<div class="row">
+			<div class="col justify-content-between align-items-center text-center">
+				<input  class="swid bmargin btn btn-sm btn-outline-primary" placeholder="Type a keyword" type="text" name="t_search" id="t_search" value="<?php if($_POST["t_search"]!=""){echo $_POST["t_search"];} ?>" />
+				<button class="bmargin btn btn-sm btn-outline-primary" type="submit" name="b_search"><i class="fa fa-search tpad"></i> <x class="thid">Search</x></button>
+				<button class="bmargin btn btn-sm btn-outline-dark" type="button" onclick="jump('messages_list.php')"><i class="fa fa-list tpad"></i> </i> <x class="thid">List View</x></button>
+				<select class="swid spad bmargin btn btn-sm btn-outline-dark" onchange="if(this.value=='Messages From')jump('messages_grid.php'); else jump('messages_grid.php?messages='+this.value+'')">
+					<option>Messages From</option>
+					<?php
+						$ex2=$link->query("select msg_from from messages group by msg_from order by msg_from");										
+						while($rs2=mysqli_fetch_array($ex2)){
+							echo "<option ";
+								if($_GET["messages"]===$rs2[0])
+								echo "selected";
+							echo">$rs2[0]</option>";
+						}
+					?>
+				</select>
+				<button class="bmargin btn btn-sm btn-outline-info" type="button" onclick="getID('t_search').value='';jump('messages_grid.php')"><i class="fa fa-sync tpad"></i> <x class="thid">Refresh</x></button>
+				<?php
+					if(!isset($_SESSION['user'])){
+						echo"";
+					}else
+						echo"
+					<a rel='facebox' href='messages_add.php'><button class='bmargin btn btn-sm btn-outline-success' type='button'><i class='fa fa-plus tpad'></i> <x class='thid'>Add Incoming Message</x></button></a>";
+				?>			
+			</div>				
+		</div>
+	</div>
+</div>
+
+</div><div class="spid"></div>
+
+<div class="container py-4 grid">
+	<div class="row"> 
+		<?php
+			$value=$_GET['value'];
+			
+			$msg="";
+			if($_GET["messages"]!="Messages From" && $_GET["messages"]!="") {
+				$msg=" and msg_from='".$_GET["messages"]."'";
+			}
+			
+			if(isset($_POST["b_search"])){
+				$value=$_POST["t_search"];
+			}
+			
+			$rec=200;
+			$p=$_GET['page'];
+			if($p>1){
+				$to=$p*$rec;
+				$from=$to-$rec;
+				$i=$to+1-$rec;
+			}else{
+				$to=$rec;
+				$from=0;
+				$i=1;
+				$p=1;
+			}
+						
+			$ex=$link->query("select * from messages where (
+				idn like'%".$value."%' or
+				msg_from like'%".$value."%' or		
+				msg_office like'%".$value."%' or		
+				msg_to like'%".$value."%' or		
+				msg_attn like'%".$value."%' or		
+				date_msg like'%".$value."%' or
+				msg_content like'%".$value."%') $msg order by idn DESC LIMIT $from,$to ");		
+
+			$ex1=$link->query("select * from messages where (
+				idn like'%".$value."%' or
+				msg_from like'%".$value."%' or		
+				msg_office like'%".$value."%' or		
+				msg_to like'%".$value."%' or		
+				msg_attn like'%".$value."%' or		
+				date_msg like'%".$value."%' or
+				msg_content like'%".$value."%') $msg order by idn DESC ");		
+				
+			$search_val=strtoupper($_POST["t_search"]);
+			$rep="<b style='color:#0014d0;background:#ffa0a0'>$search_val</b>";
+			$is_admin = ($_SESSION["access"] !== "");
+			
+			while($rs=mysqli_fetch_array($ex)){
+				if (!empty($rs['date_msg']) && $rs['date_msg'] !== '0000-00-00') {
+					$msg_time = strtotime($rs['date_msg']);
+					$rs['msg_month'] = date('m', $msg_time);
+					$rs['msg_day'] = date('d', $msg_time);
+					$rs['msg_year'] = date('Y', $msg_time);
+				} else {
+					$rs['msg_month'] = '';
+					$rs['msg_day'] = '';
+					$rs['msg_year'] = '';
+				}
+				if (!empty($rs['date_confirm']) && $rs['date_confirm'] !== '0000-00-00') {
+					$confirm_time = strtotime($rs['date_confirm']);
+					$rs['confirm_month'] = date('m', $confirm_time);
+					$rs['confirm_day'] = date('d', $confirm_time);
+					$rs['confirm_year'] = date('Y', $confirm_time);
+				} else {
+					$rs['confirm_month'] = '';
+					$rs['confirm_day'] = '';
+					$rs['confirm_year'] = '';
+				}
+				if(isset($_POST["b_remove_$rs[0]"])){
+					$link->query("delete from messages where idn='$rs[0]'");
+					jump("");
+				}
+				
+				if(isset($_POST["b_upImg_$rs[0]"])){
+					move_uploaded_file($_FILES["b_file_$rs[0]"]["tmp_name"], "images/messages/$rs[0].jpg");
+					$link->query("update messages set ispicset=1 where idn='$rs[0]'");
+					jump("");
+				}
+
+				$photo_path = 'images/back_ca.jpg';
+				if(file_exists("images/messages/$rs[0].jpg")){
+					$photo_path = "images/messages/$rs[0].jpg?" . date("h:i:s");
+				}
+
+				?>
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4" id="div_<?php echo $rs[0]; ?>">
+					<div class="card msg-card h-100 shadow-sm border-2">
+						<div class="msg-card-img-container">
+							<!-- Index Badge -->
+							<span class="badge badge-dark position-absolute m-2" style="top: 5px; left: 0; z-index: 10; font-size: 14px; opacity: 0.8;">#<?php echo $i; ?></span>
+							
+							<!-- Image -->
+							<img src="<?php echo $photo_path; ?>" alt="Message Photo" onclick="jump('messages_pds.php?messages=<?php echo $rs[0]; ?>')" style="cursor:pointer;" />
+							
+							<!-- Hover actions overlay -->
+							<div class="msg-hover-actions">
+								<button type="button" class="btn btn-sm btn-primary btn-block my-1" onclick="jump('messages_pds.php?messages=<?php echo $rs[0]; ?>')">
+									<i class="fas fa-eye mr-1"></i> View Document
+								</button>
+								<?php if ($is_admin): ?>
+									<button type="button" class="btn btn-sm btn-light btn-block my-1" onclick="$('#b_file_<?php echo $rs[0]; ?>').click();">
+										<i class="fas fa-camera mr-1"></i> Change Photo
+									</button>
+									<a rel="facebox" href="messages_edit_form.php?messages=<?php echo $rs[0]; ?>" class="btn btn-sm btn-warning btn-block my-1">
+										<i class="fas fa-edit mr-1"></i> Edit Details
+									</a>
+									<button type="button" class="btn btn-sm btn-danger btn-block my-1" onclick="messages_delete('<?php echo $rs[0]; ?>')">
+										<i class="fas fa-trash-alt mr-1"></i> Remove
+									</button>
+								<?php endif; ?>
+							</div>
+						</div>
+						
+						<div class="card-body p-3 d-flex flex-column justify-content-between">
+							<div>
+								<!-- Msg From -->
+								<h6 class="font-weight-bold mb-1 text-uppercase text-dark text-truncate">
+									<?php echo str_replace($search_val, $rep, $rs["msg_from"]); ?>
+								</h6>
+								
+								<!-- ID No / Case No -->
+								<div class="small mb-1 text-truncate">
+									<span class="text-muted">MSG No:</span>
+									<strong class="text-danger">
+										<?php 
+											echo str_replace($search_val, $rep, $rs[0]) . "-" . $rs["msg_year"] . "-" . $rs["msg_month"] . $rs["msg_day"];
+										?>
+									</strong>
+								</div>
+								
+								<hr class="my-2">
+
+								<div class="small text-muted mb-1 text-truncate">
+									Office: <strong class="text-dark"><?php echo str_replace($search_val, $rep, $rs["msg_office"]); ?></strong>
+								</div>
+								
+								<div class="small text-muted mb-1">
+									Dated: <strong class="text-dark"><?php echo $rs["msg_month"] . "-" . $rs["msg_day"] . "-" . $rs["msg_year"]; ?></strong>
+								</div>
+
+								<div class="small text-muted mb-1 text-truncate">
+									Msg To: <strong class="text-dark"><?php echo str_replace($search_val, $rep, $rs["msg_to"]); ?></strong>
+								</div>
+
+								<div class="small text-muted mb-1 text-truncate">
+									Attention: <strong class="text-dark"><?php echo str_replace($search_val, $rep, $rs["msg_attn"]); ?></strong>
+								</div>
+
+								<div class="small text-muted mb-1">
+									Confirmation Date: <strong class="text-dark"><?php echo $rs["confirm_month"] . "-" . $rs["confirm_day"] . "-" . $rs["confirm_year"]; ?></strong>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<?php if ($is_admin): ?>
+						<input type="file" name="b_file_<?php echo $rs[0]; ?>" id="b_file_<?php echo $rs[0]; ?>" style="display:none" onchange="if(this.value!='') $('#b_upImg_<?php echo $rs[0]; ?>').click();"/> 
+						<input type="submit" name="b_upImg_<?php echo $rs[0]; ?>" id="b_upImg_<?php echo $rs[0]; ?>" style="display:none"/> 
+					<?php endif; ?>
+				</div>
+				<?php
+				$i++;
+			}			
+		?>	
+	</div>
+</div>
+</form>
+
+<?php include("footerNAV.php");?>
+
+</body>
+
+</html>
+
+<script>
+	function messages_delete(idn){	
+		if(confirm("Are you sure you want to Remove this messages?")){
+			xmlhttp.onreadystatechange=function()
+			{
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					if(xmlhttp.responseText=="Success"){
+						$("#div_"+idn).animate({
+					opacity:0
+					},500);
+				}else{
+					alert(xmlhttp.responseText);
+					}
+					$("#div_"+idn).animate({
+					opacity:0
+					},500);
+				}
+			}					
+			xmlhttp.open("GET","messages_delete.php?idn="+idn,true);
+			xmlhttp.send();
+		}
+	}
+</script>

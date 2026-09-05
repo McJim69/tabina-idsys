@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /index.php
+Allow: /public_home.php
+Allow: /lgu_profile.php
+Allow: /login.php
+Allow: /forget_pass_post.php
+Allow: /forget_pass_post_proc.php
+Allow: /forget_pass_msg.php
+Allow: /images/
+Allow: /style/
+Allow: /scripts/
+
+# Block administrative directories and pages
+Disallow: /connect.php
+Disallow: /auto-logout.php
+Disallow: /session_start.php
+Disallow: /households_*.php
+Disallow: /indigents_*.php
+Disallow: /pwd_*.php
+Disallow: /senior_*.php
+Disallow: /cert_indigency_*.php
+Disallow: /employees_*.php
+Disallow: /kinder_*.php
+Disallow: /mayor_clearance_*.php
+Disallow: /permit_*.php
+Disallow: /messages_*.php
+Disallow: /msgout_*.php
+Disallow: /users_*.php
+Disallow: /backup.php
+Disallow: /chat_rooms.php
+Disallow: /private_chat.php
+Disallow: /whosonline.php

@@ -1,0 +1,61 @@
+<?php
+require("connect.php");
+
+header('Content-Type: application/json');
+
+if (!isset($_SESSION['user'])) {
+    echo json_encode(array("unread_count" => 0, "unread_messages" => array()));
+    exit;
+}
+
+$me = $_SESSION['user'];
+$me_esc = mysqli_real_escape_string($link, $me);
+
+// 1. Get total unread count
+$countQuery = $link->query("SELECT COUNT(*) FROM private_messages WHERE receiver = '$me_esc' AND is_read = 0");
+$countRow = mysqli_fetch_array($countQuery);
+$unreadCount = intval($countRow[0]);
+
+// 2. Get all unread messages
+$messages = array();
+$msgQuery = $link->query("
+    SELECT pm.id, pm.sender, pm.message, pm.sent_at, u.fullname, u.imgUrl 
+    FROM private_messages pm 
+    INNER JOIN users u ON pm.sender = u.username 
+    WHERE pm.receiver = '$me_esc' 
+      AND pm.is_read = 0 
+    ORDER BY pm.id ASC
+");
+
+// Get emoticon mapping
+$emoticonArray = array();
+$emoQuery = $link->query("SELECT * FROM emoticons");
+if ($emoQuery) {
+    while ($emoRow = mysqli_fetch_array($emoQuery)) {
+        $emoticonArray[$emoRow['code']] = $emoRow['location'];
+    }
+}
+
+while ($row = mysqli_fetch_assoc($msgQuery)) {
+    $avatarPath = "images/users/" . $row['imgUrl'];
+    if (empty($row['imgUrl']) || !file_exists($avatarPath)) {
+        $avatarPath = "images/users/blank.jpg";
+    }
+    $row['avatar'] = $avatarPath;
+    
+    // Replace emoticon codes
+    $msgBody = htmlspecialchars($row['message']);
+    foreach ($emoticonArray as $code => $location) {
+        $msgBody = str_replace($code, $location, $msgBody);
+    }
+    $row['message'] = $msgBody;
+    
+    $messages[] = $row;
+}
+
+echo json_encode(array(
+    "unread_count" => $unreadCount,
+    "unread_messages" => $messages
+));
+exit;
+?>

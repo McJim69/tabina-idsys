@@ -1,0 +1,77 @@
+.stats-card {
+	border-radius: 16px;
+	border: 1px solid rgba(255,255,255,0.2);
+	color: #ffffff;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+	transition: all 0.25s ease-in-out;
+	min-height: 110px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.stats-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.stats-card.card-blue {
+	background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+.stats-card.card-green {
+	background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+.stats-card.card-orange {
+	background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+}
+.stats-card.card-purple {
+	background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%);
+}
+.chart-container {
+	background: #ffffff;
+	border: 1px solid #eef2f5;
+	border-radius: 16px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+	padding: 20px;
+	margin-bottom: 30px;
+}
+.chart-title {
+	font-size: 16px;
+	font-weight: 700;
+	color: #113f67;
+	margin-bottom: 20px;
+	border-left: 4px solid #38598b;
+	padding-left: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+.brgy-progress-container {
+	max-height: 400px;
+	overflow-y: auto;
+	padding-right: 5px;
+}
+.brgy-progress-item {
+	margin-bottom: 15px;
+}
+.brgy-progress-label {
+	display: flex;
+	justify-content: space-between;
+	font-size: 13px;
+	font-weight: 600;
+	color: #495057;
+	margin-bottom: 5px;
+}
+[data-theme="dark"] .chart-container {
+	background-color: var(--bg-secondary) !important;
+	border-color: var(--border-color) !important;
+}
+[data-theme="dark"] .chart-title {
+	color: var(--text-main) !important;
+	border-left-color: var(--text-muted) !important;
+}
+[data-theme="dark"] .brgy-progress-label {
+	color: var(--text-main) !important;
+}
+[data-theme="dark"] .brgy-progress-label .text-muted {
+	color: var(--text-muted) !important;
+}

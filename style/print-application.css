@@ -1,0 +1,464 @@
+body {
+	background-color: #f0f2f5;
+	font-family: 'Outfit', sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+/* Controls styling */
+.no-print-toolbar {
+	background: #fff;
+	padding: 15px 20px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.btn {
+	padding: 10px 20px;
+	border-radius: 30px;
+	font-weight: 700;
+	font-size: 14px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.2s;
+	border: none;
+}
+
+.btn-primary {
+	background: #4e73df;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background: #2e59d9;
+}
+
+.btn-secondary {
+	background: #eaecf4;
+	color: #4e73df;
+}
+
+.btn-secondary:hover {
+	background: #dddfeb;
+}
+
+/* Content layouts container */
+.print-container {
+	display: flex;
+	justify-content: center;
+	padding: 40px 20px;
+}
+
+/* ================= ID CARD STYLING ================= */
+.id-card-wrap {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.id-card {
+	width: 337px; /* 85.6mm */
+	height: 213px; /* 54mm */
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	font-family: 'Outfit', sans-serif;
+}
+
+/* ID Front Theme styling based on service */
+.id-card.front {
+	background: linear-gradient(90deg, rgba(255, 236, 210, 0.29) 0%, rgba(252, 182, 159, 0.55) 100%),
+	url("../images/tabina_watermark_logo1.png")center/cover no-repeat;
+}
+
+.card-header-banner {
+	height: 48px;
+	color: white;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	position: relative;
+}
+
+/* Theme Colors */
+.theme-senior { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+.theme-pwd { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.theme-solo_parent { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+
+.card-header-banner img {
+	height: 34px;
+	margin-right: 8px;
+}
+
+.card-header-banner .title-wrap h4 {
+	margin: 0;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 800;
+}
+.card-header-banner .title-wrap p {
+	margin: 0;
+	font-size: 8px;
+	opacity: 0.9;
+}
+
+.card-body-content {
+	display: flex;
+	padding: 12px;
+	height: calc(100% - 48px);
+	box-sizing: border-box;
+}
+
+.avatar-container {
+	width: 80px;
+	height: 100px;
+	border: 2px solid #fff;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	border-radius: 6px;
+	overflow: hidden;
+	background: #eee;
+}
+
+.avatar-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.signature-container {
+	position: absolute;
+	width: 82px;
+	height: 40px;
+	left: 12px;
+	bottom:8px;
+}
+
+.signature-container img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.signature-text {
+	position: absolute;
+	width: 82px;
+	left: 20px;
+	bottom:12px;
+	font-size:7px;
+}
+
+.details-container {
+	flex: 1;
+	padding-left: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.detail-row h2 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 800;
+	color: #2b2b2b;
+	text-transform: uppercase;
+}
+
+.detail-row p {
+	margin: 2px 0 0 0;
+	font-size: 9px;
+	color: #666;
+	font-weight: 600;
+}
+
+.meta-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4px;
+}
+
+.meta-item {
+	font-size: 8px;
+}
+.meta-item strong {
+	display: block;
+	color: #888;
+	text-transform: uppercase;
+	font-size: 7px;
+}
+.meta-item span {
+	color: #333;
+	font-weight: 700;
+}
+
+/* ID Back styling */
+.id-card.back {
+	background: #fff url("../images/tabina_watermark_logo.png")center/cover no-repeat;
+	padding: 12px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.back-instructions {
+	font-size: 7.5px;
+	color: #555;
+	line-height: 1.3;
+	margin: 0;
+	padding-bottom: 6px;
+	border-bottom: 1px dashed #ddd;
+}
+
+.back-middle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 6px 0;
+}
+
+.emergency-contact-box {
+	flex: 1;
+	padding-right: 10px;
+}
+.emergency-contact-box h5 {
+	margin: 0 0 2px 0;
+	font-size: 7.5px;
+	color: #ff5e5e;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.emergency-contact-box p {
+	margin: 1px 0;
+	font-size: 8px;
+	font-weight: 600;
+}
+
+.qr-box {
+	width: 60px;
+	height: 60px;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.qr-box img {
+	width: 100%;
+	height: 100%;
+}
+
+.back-signatory-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.signature-line {
+	text-align: center;
+	width: 40%;
+}
+.signature-line img {
+	height: 40px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom:-15px;
+	object-fit: cover;
+}
+.signature-line span {
+	border-top: 1px solid #333;
+	display: block;
+	font-size: 7px;
+	font-weight: 700;
+	padding-top: 2px;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+
+/* ================= CERTIFICATE STYLING ================= */
+.cert-layout {
+	width: 800px;
+	background: #fff;
+	padding: 50px 70px;
+	box-sizing: border-box;
+	border: 20px solid #fff;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	outline: 2px solid #ddd;
+	position: relative;
+	background-image: radial-gradient(rgba(0,0,0,0.02) 2px, transparent 2px);
+	background-size: 24px 24px;
+}
+
+.cert-border-accent {
+	border: 2px solid #5c6bc0;
+	padding: 40px;
+	position: relative;
+}
+
+.cert-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.cert-header img.lgu-seal {
+	height: 70px;
+	margin-bottom: 10px;
+}
+
+.cert-header p.sub-header {
+	margin: 2px 0;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+.cert-header h3.office-name {
+	margin: 5px 0 0 0;
+	font-size: 15px;
+	font-weight: 700;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.cert-title-container {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.cert-title-container h1 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 600;
+	font-style: italic;
+	font-size: 32px;
+	margin: 0;
+	color: #1a237e;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.cert-title-container hr {
+	width: 120px;
+	border: 0;
+	height: 2px;
+	background: #5c6bc0;
+	margin: 10px auto 0 auto;
+}
+
+.cert-body {
+	font-size: 14px;
+	line-height: 1.8;
+	color: #444;
+	text-align: justify;
+}
+
+.cert-body p.salutation {
+	font-weight: 700;
+	margin-bottom: 20px;
+	font-size: 15px;
+	color: #222;
+}
+
+.cert-body p.indent {
+	text-indent: 50px;
+	margin-bottom: 20px;
+}
+
+.cert-body strong {
+	color: #111;
+}
+
+.cert-footer {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.cert-qr-wrap {
+	text-align: center;
+	font-size: 10px;
+	color: #777;
+}
+
+.cert-qr-wrap img {
+	width: 90px;
+	height: 90px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.cert-signatory {
+	text-align: center;
+	width: 250px;
+}
+
+.cert-signatory p.name {
+	margin: 0;
+	font-weight: 800;
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #111;
+	border-bottom: 1.5px solid #222;
+	padding-bottom: 4px;
+}
+
+.cert-signatory p.title {
+	margin: 4px 0 0 0;
+	font-size: 11px;
+	font-weight: 600;
+	color: #555;
+	text-transform: uppercase;
+}
+
+/* ================= PRINT STYLING ================= */
+@media print {
+	body {
+		background-color: #fff;
+	}
+	
+	.no-print-toolbar {
+		display: none !important;
+	}
+
+	.print-container {
+		padding: 0;
+	}
+
+	/* Force ID cards to exact dimensions and hide shadows */
+	.id-card {
+		box-shadow: none !important;
+		border: 1px solid #bbb !important;
+		page-break-inside: avoid;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	/* Center ID cards on page */
+	.id-card-wrap {
+		gap: 50px;
+	}
+
+	/* Certificates fill page print */
+	.cert-layout {
+		box-shadow: none !important;
+		border: none !important;
+		outline: none !important;
+		padding: 20px;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

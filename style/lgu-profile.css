@@ -1,0 +1,68 @@
+body {
+	font-family: 'Outfit', sans-serif;
+	background-color: #f4f6f9;
+	color: #1e293b;
+}
+
+.profile-hero-card {
+	background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0b132b 100%);
+	border-radius: 20px;
+	color: #ffffff;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+}
+
+.pillar-card {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+	transition: all 0.3s ease;
+	margin-bottom: 24px;
+}
+
+.pillar-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.pillar-header-blue { border-top: 5px solid #2563eb; }
+.pillar-header-green { border-top: 5px solid #10b981; }
+.pillar-header-purple { border-top: 5px solid #8b5cf6; }
+.pillar-header-orange { border-top: 5px solid #f59e0b; }
+.pillar-header-teal { border-top: 5px solid #14b8a6; }
+
+.rank-badge {
+	background: #eff6ff;
+	color: #1d4ed8;
+	border: 1px solid #bfdbfe;
+	font-weight: 700;
+	padding: 4px 10px;
+	border-radius: 20px;
+	font-size: 0.85rem;
+}
+
+.score-pill {
+	background: #1e293b;
+	color: #f8fafc;
+	font-weight: 800;
+	padding: 4px 12px;
+	border-radius: 8px;
+	font-size: 0.9rem;
+}
+
+.metric-item {
+	padding: 10px 0;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.metric-item:last-child {
+	border-bottom: none;
+}
+
+.cmci-logo-img {
+	height: 48px;
+	width: auto;
+	object-fit: contain;
+}

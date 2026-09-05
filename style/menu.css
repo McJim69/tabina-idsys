@@ -1,0 +1,419 @@
+/**** MODERN NAV BAR MENU STYLING ****/
+
+/* Reset & Main Wrapper */
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#cssmenu:after,
+#cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#cssmenu #menu-button {
+    display: none;
+}
+
+#cssmenu {
+    margin-left: auto;
+    margin-right: auto;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+/* Top-Level Menu Items */
+#cssmenu > ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#cssmenu > ul > li {
+    float: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+#cssmenu > ul > li > a {
+    padding: 0 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+#cssmenu > ul > li:hover > a {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: #C64934; /* Accent color matching bottom bar */
+}
+
+#cssmenu > ul > li.active > a {
+    color: #ffffff;
+    background-color: rgba(5, 98, 175, 0.2);
+    border-bottom-color: #0562af;
+}
+
+/* Submenu Dropdown Containers (Level 1) */
+#cssmenu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: #242526;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    padding: 6px 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+}
+
+/* Show Submenus on Hover */
+#cssmenu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Submenu Item Styles */
+#cssmenu ul ul li {
+    position: relative;
+    width: 100%;
+}
+
+#cssmenu ul ul li a {
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    text-transform: none;
+}
+
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li a:hover {
+    color: #ffffff;
+    background-color: #C64934;
+}
+
+/* Nested Submenus (Level 2+) */
+#cssmenu ul ul ul {
+    left: 100%;
+    top: -6px;
+    margin-left: 1px;
+}
+
+/* Alignment Configurations */
+#cssmenu.align-center > ul {
+    justify-content: center;
+    width: 100%;
+}
+
+#cssmenu.align-right > ul {
+    justify-content: flex-end;
+}
+
+#cssmenu.align-right li:hover > ul {
+    right: 0;
+    left: auto;
+}
+
+#cssmenu.align-right ul ul ul {
+    right: 100%;
+    left: auto;
+    margin-left: 0;
+    margin-right: 1px;
+}
+
+/* CSS Carets & Indicators */
+#cssmenu li.has-sub > a:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    opacity: 0.7;
+    transition: transform 0.25s ease;
+}
+
+#cssmenu > ul > li.has-sub:hover > a:after {
+    transform: rotate(180deg);
+}
+
+#cssmenu ul ul li.has-sub > a:after {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid;
+    border-right: 0;
+}
+
+/* Responsive Mobile Layout (Width <= 768px) */
+@media all and (max-width: 768px) {
+    #cssmenu {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #cssmenu ul {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background: #1c1d1e;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 8px 0;
+    }
+
+    #cssmenu > ul {
+        height: auto;
+        align-items: flex-start;
+    }
+
+    #cssmenu ul li {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #cssmenu > ul > li {
+        align-items: stretch;
+    }
+
+    #cssmenu > ul > li > a {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+    }
+
+    #cssmenu > ul > li:hover > a {
+        border-left-color: #C64934;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    #cssmenu ul ul {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0;
+        display: none;
+        border-radius: 0;
+    }
+
+    #cssmenu ul ul li a {
+        padding-left: 35px;
+    }
+
+    #cssmenu ul ul ul li a {
+        padding-left: 50px;
+    }
+
+    #cssmenu ul ul ul {
+        margin: 0;
+    }
+
+    /* Menu Toggle Button */
+    #cssmenu #menu-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        color: #e0e0e0;
+        cursor: pointer;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: #2c2c2c;
+        height: 48px;
+    }
+
+    #cssmenu #menu-button:after {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 2px;
+        background: #ddd;
+        box-shadow: 0 5px 0 #ddd, 0 -5px 0 #ddd;
+        transition: all 0.25s ease;
+    }
+
+    #cssmenu #menu-button.menu-opened:after {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    /* Submenu Expand Button */
+    #cssmenu .submenu-button {
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 44px;
+        width: 44px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #cssmenu .submenu-button:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 4px solid #ddd;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        transition: transform 0.25s ease;
+    }
+
+    #cssmenu .submenu-button.submenu-opened:after {
+        transform: rotate(180deg);
+    }
+
+    #cssmenu ul ul .submenu-button {
+        height: 38px;
+        width: 38px;
+    }
+
+    .menu_div {
+        height: 50px !important;
+        max-height: 50px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        overflow: visible !important;
+    }
+
+    #cssmenu {
+        flex-grow: 1 !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    #cssmenu #menu-button {
+        width: auto !important;
+        background: transparent !important;
+        color: #e0e0e0 !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        cursor: pointer !important;
+        border: none !important;
+        height: 100% !important;
+    }
+
+    #cssmenu #menu-button:after {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 2px;
+        background: #ddd;
+        box-shadow: 0 5px 0 #ddd, 0 -5px 0 #ddd;
+        margin-left: 10px;
+        transition: all 0.25s ease;
+    }
+
+    /* Top-level UL menu when open */
+    #cssmenu > ul.open {
+        position: fixed !important;
+        top: 50px !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 50px) !important;
+        max-height: calc(100vh - 50px) !important;
+        overflow-y: auto !important;
+        background: #1c1d1e !important;
+        z-index: 9999 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    #cssmenu > ul > li {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    #cssmenu > ul > li > a {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        border-left: 3px solid transparent !important;
+        border-bottom: none !important;
+    }
+
+    #theme-toggle-btn {
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+}
+
+/* Hide menu bar during printing */
+@media print {
+    #menu_, .menu_div, #cssmenu, #menu-button {
+        display: none !important;
+    }
+}

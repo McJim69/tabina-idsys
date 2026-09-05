@@ -1,0 +1,99 @@
+.post-msg-card {
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 480px;
+    margin: 10px auto;
+    font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/* Light Theme (Default) */
+.post-msg-card {
+    background-color: #ffffff;
+    color: #3a5795;
+    border: 1px solid #e1e8ed;
+}
+.post-msg-card .form-title {
+    color: #1b5e20;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+.post-msg-card .form-label {
+    color: #4b6584;
+    font-weight: 600;
+}
+.post-msg-card .form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #dcdde1;
+    color: #2f3640;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.post-msg-card .form-control:focus {
+    background-color: #ffffff;
+    border-color: #C64934;
+    box-shadow: 0 0 0 0.2rem rgba(198, 73, 52, 0.25);
+    color: #2f3640;
+}
+.post-msg-card .btn-submit {
+    background-color: #C64934;
+    border-color: #C64934;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+}
+.post-msg-card .btn-submit:hover {
+    background-color: #b53823;
+    border-color: #b53823;
+    transform: translateY(-1px);
+}
+.post-msg-card .btn-cancel {
+    background-color: #f1f2f6;
+    border-color: #f1f2f6;
+    color: #57606f;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+}
+.post-msg-card .btn-cancel:hover {
+    background-color: #dfe4ea;
+    color: #2f3640;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .post-msg-card {
+    background-color: #242526 !important;
+    color: #f5f6f7 !important;
+    border-color: #3a3a3a !important;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 16px;
+}
+[data-theme="dark"] .post-msg-card .form-title {
+    color: #81c784 !important;
+}
+[data-theme="dark"] .post-msg-card .form-label {
+    color: #a0aab5 !important;
+}
+[data-theme="dark"] .post-msg-card .form-control {
+    background-color: #1a1a1a !important;
+    border-color: #3e3e3e !important;
+    color: #f5f6f7 !important;
+}
+[data-theme="dark"] .post-msg-card .form-control:focus {
+    background-color: #202020 !important;
+    border-color: #C64934 !important;
+    box-shadow: 0 0 0 0.2rem rgba(198, 73, 52, 0.35) !important;
+    color: #ffffff !important;
+}
+[data-theme="dark"] .post-msg-card .btn-cancel {
+    background-color: #2f3542 !important;
+    border-color: #2f3542 !important;
+    color: #a0aab5 !important;
+}
+[data-theme="dark"] .post-msg-card .btn-cancel:hover {
+    background-color: #3f4556 !important;
+    color: #ffffff !important;
+}

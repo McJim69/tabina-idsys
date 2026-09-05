@@ -1,0 +1,118 @@
+#facebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  text-align: left;
+}
+
+#facebox .popup {
+  margin-top: 35px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  overflow: hidden;
+  max-width: 95vw;
+}
+
+#facebox .content {
+  display: block;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  min-width: 320px;
+}
+
+#facebox .content > p:first-child {
+  margin-top: 0;
+}
+
+#facebox .content > p:last-child {
+  margin-bottom: 0;
+}
+
+#facebox .close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  padding: 4px 8px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  z-index: 20;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#facebox .close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+#facebox .loading {
+  text-align: center;
+}
+
+#facebox .image {
+  text-align: center;
+}
+
+#facebox img {
+  border: 0;
+  margin: 0;
+}
+
+#facebox_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1040;
+}
+
+.facebox_hide {
+  z-index: -100;
+  display: none;
+}
+
+.facebox_overlayBG {
+  background-color: #000000 !important;
+  opacity: 0.5 !important;
+  z-index: 1040;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.hoverbox
+{
+	cursor: default;
+	list-style: none;
+}
+
+.hoverbox a
+{
+	cursor:pointer;
+}
+
+.hoverbox img
+{
+	background: #fff;
+	border-color: #aaa #ccc #ddd #bbb;
+	border-style: solid;
+	border-width: 1px;
+	color: inherit;
+	padding: 2px;
+	vertical-align: top;
+	width: 115px;
+	height: 70px;
+	margin-bottom:5px;
+}

@@ -1,0 +1,41 @@
+.form-card {
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+	border: 1px solid #e2e8f0;
+	overflow: hidden;
+}
+.form-header {
+	background: linear-gradient(135deg, #2d3748, #4a5568);
+	color: #ffffff;
+	padding: 20px 25px;
+}
+.form-section-title {
+	font-size: 16px;
+	font-weight: bold;
+	color: #2d3748;
+	border-bottom: 2px solid #edf2f7;
+	padding-bottom: 8px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+.info-box {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 15px;
+}
+.swm-card {
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	background: #f8fafc;
+	padding: 10px;
+	height: 100%;
+}
+.btn-pds {
+	font-weight: 600;
+	padding: 8px 20px;
+	border-radius: 6px;
+}

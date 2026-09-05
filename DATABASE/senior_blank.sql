@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS `senior`;
+
+CREATE TABLE `senior` (
+  `idn` int(11) NOT NULL AUTO_INCREMENT,
+  `province` varchar(100) DEFAULT NULL,
+  `city_mun` varchar(100) DEFAULT NULL,
+  `barangay` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `civilstatus` varchar(100) DEFAULT NULL,
+  `name_1st` varchar(100) DEFAULT NULL,
+  `name_mid` varchar(100) DEFAULT NULL,
+  `name_fam` varchar(100) DEFAULT NULL,
+  `sex` varchar(100) DEFAULT NULL,
+  `birth_date` varchar(100) DEFAULT NULL,
+  `age` int(4) DEFAULT '0',
+  `birth_place` varchar(100) DEFAULT NULL,
+  `emailadd` varchar(100) DEFAULT NULL,
+  `mobileno` varchar(100) DEFAULT NULL,
+  `education` varchar(100) DEFAULT NULL,
+  `occupation` varchar(100) DEFAULT NULL,
+  `association` varchar(100) DEFAULT NULL,
+  `position` varchar(100) DEFAULT NULL,
+  `assoc_id_no` varchar(100) DEFAULT NULL,
+  `assoc_reg_date` varchar(100) DEFAULT NULL,
+  `contactperson` varchar(100) DEFAULT NULL,
+  `relationship` varchar(100) DEFAULT NULL,
+  `emergencyno` varchar(100) DEFAULT NULL,
+  `interviewer` varchar(100) DEFAULT NULL,
+  `inter_date` varchar(100) DEFAULT NULL,
+  `ispicset` int(11) DEFAULT '0',
+  PRIMARY KEY (`idn`)
+);

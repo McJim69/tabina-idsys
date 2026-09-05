@@ -1,0 +1,199 @@
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: #f4f6f9;
+	color: #2d3748;
+}
+.public-navbar {
+	background: #0f172a;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.public-hero {
+    background: linear-gradient(
+        rgba(15, 23, 42, 0.85), 
+        rgba(30, 58, 138, 0.85) 
+    ),
+    url("../images/scenic/tambunan.jpg") center/cover no-repeat;
+
+    color: #ffffff;
+    padding: 70px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.public-hero::before {
+	content: "";
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+	top: -100px;
+	right: -100px;
+	border-radius: 50%;
+}
+
+.exec-card {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+	transition: all 0.3s ease;
+	padding: 24px;
+	margin-bottom: 24px;
+}
+.exec-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.icon-shape {
+	width: 56px;
+	height: 56px;
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+.icon-blue { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.icon-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.icon-purple { background: rgba(124, 58, 237, 0.1); color: #7c3aed; }
+.icon-orange { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.chart-card {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #e2e8f0;
+	padding: 24px;
+	margin-bottom: 30px;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+.section-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #0f172a;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+}
+.section-title::before {
+	content: "";
+	display: inline-block;
+	width: 4px;
+	height: 20px;
+	background: #2563eb;
+	margin-right: 10px;
+	border-radius: 2px;
+}
+.public-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+.public-table th {
+	background: #f8fafc;
+	color: #475569;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	letter-spacing: 0.05em;
+	padding: 14px 16px;
+	border-bottom: 1px solid #e2e8f0;
+}
+.public-table td {
+	padding: 14px 16px;
+	border-bottom: 1px solid #f1f5f9;
+	font-size: 0.875rem;
+}
+.public-table tr:hover td {
+	background-color: #f8fafc;
+}
+.footer-public {
+	background: #0f172a;
+	color: #94a3b8;
+	padding: 40px 0;
+	margin-top: 60px;
+	border-top: 1px solid #1e293b;
+}
+
+/* Logo Carousel Styles */
+.logo-carousel-section-public {
+	background: #0f172a;
+	border-top: 1px solid #1e293b;
+	border-bottom: 1px solid #1e293b;
+	padding: 16px 0;
+	overflow: hidden;
+	width: 100%;
+}
+
+.logo-carousel-track-wrapper {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+	-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-carousel-track {
+	display: flex;
+	align-items: center;
+	width: max-content;
+	animation: logoScroll 28s linear infinite;
+}
+
+.logo-carousel-track:hover {
+	animation-play-state: paused;
+}
+
+@keyframes logoScroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.logo-item {
+	flex: 0 0 auto;
+	padding: 0 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo-item img {
+	height: 48px;
+	width: auto;
+	max-width: 130px;
+	object-fit: contain;
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.85)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)) brightness(1.05);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-item img:hover {
+	filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1)) drop-shadow(0 0 22px rgba(59, 130, 246, 0.75)) brightness(1.2);
+	transform: scale(1.18);
+}
+
+.transition-hover {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-hover:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hero-equal-btn {
+	min-width: 225px;
+	flex: 1 1 210px;
+	height: 50px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	font-size: 1rem;
+	text-align: center;
+	white-space: nowrap;
+}
