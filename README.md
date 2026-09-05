@@ -157,8 +157,8 @@ Apply unique constraints on ID card tables (Senior Citizens, PWD, Solo Parents)
 --
 
 ## 4. Configure Environment
-Update database connection in config.php
-Ensure write permissions for QR code and upload directories
+#### Update database connection in config.php
+#### Ensure write permissions for QR code and upload directories
 --
 
 ## 5. Run the Server
