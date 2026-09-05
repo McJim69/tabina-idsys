@@ -125,7 +125,7 @@ It features an integrated citizen portal and a robust administration module.
 
 ---
 
-## ⚡ Quick Start – LGU Tabina CCDP
+## ⚡ Quick Start
 This guide helps you set up the **LGU Tabina Citizen-Centric Digital Platform (CCDP)** quickly.
 
 ---
